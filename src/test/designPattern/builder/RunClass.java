@@ -1,4 +1,4 @@
-package test.designPattern.FactoryMethod;
+package test.designPattern.builder;
 /*
  * 具体角色：
  * 抽象工厂(Creator)角色：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口。
@@ -10,11 +10,9 @@ public class RunClass {
 
     public static void main(String[] args) {
 
-        Creator<Product> creator = new ConcreteCreator();
-
-        Product p = creator.creater(ConcreteProduct.class);
-
-        p.dothing();
+        Builder builder = new ConcreteBuilder();
+        Product prodcut = builder.build();
+        prodcut.dothing();
     }
 
 }
